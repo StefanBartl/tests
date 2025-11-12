@@ -1,0 +1,31 @@
+{
+  "name": "websocket",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config src/client/vite.config.ts",
+    "build": "tsc && vite build --config src/client/vite.config.ts",
+    "preview": "vite preview --config src/client/vite.config.ts",
+    "server": "ts-node --esm src/server/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.39.1",
+    "get-port": "^6.1.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ws": "^8.18.3",
+    "get-port": "^6.1.2"
+  }
+}

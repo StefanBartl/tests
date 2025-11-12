@@ -1,0 +1,12 @@
+{
+  "name": "tsdap",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
