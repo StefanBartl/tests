@@ -1,0 +1,47 @@
+{
+  "name": "fsextra",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+		"dev": "cross-env DEBUG=app:* tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "debug": "^4.4.3",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.2",
+    "get-port": "^6.1.2",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^2.0.0",
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin": "^3.1.0",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.10.1",
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.39.1",
+    "eslint-config-airbnb-extended": "^2.3.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "nodemon": "^3.1.10",
+    "prettier": "3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.47.0",
+    "typescript-language-server": "^5.1.2",
+    "vite": "^7.2.2"
+  }
+}

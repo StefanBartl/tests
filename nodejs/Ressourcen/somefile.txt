@@ -1,0 +1,10 @@
+Die ist eine Testdatei.
+Ich bin gespannt, ob ich diese mit fs-extra problemlos lesen und eventuell auch schreiben kann.
+
+Hihi.
+
+Los geht's!
+
+:-)
+
+Steve

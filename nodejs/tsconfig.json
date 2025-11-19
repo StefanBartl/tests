@@ -1,0 +1,79 @@
+{
+  // Basis-Optionen / Language & Compatibility
+  "compilerOptions": {
+    // Ermöglicht den Import von CommonJS-Default-Exports als Default-Import.
+    "esModuleInterop": true,
+
+    // Ignoriere Typ-Prüfungen in Drittanbieter-Declaration-Files (beschleunigt Builds bei Typ-Problemen).
+    "skipLibCheck": true,
+
+    // Ziel-JavaScript-Version (ES2022).
+    "target": "es2022",
+
+    // Erlaube .js-Dateien im Projekt (nützlich für Mischprojekte JS/TS).
+    "allowJs": false,
+
+    // Erlaube das Importieren von JSON-Dateien als Module.
+    "resolveJsonModule": true,
+
+    // Erzwingt automatische Erkennung des Modultyps (z. B. .ts/.mts/.cts) nach Regeln.
+    "moduleDetection": "force",
+
+    // Isoliere Dateien für Transpilation (keine cross-file Transforms).
+    "isolatedModules": true,
+
+    // Bewahre die ursprüngliche Modulsyntax beim Emit (nützlich für NodeNext/ESM).
+    "verbatimModuleSyntax": true,
+
+    // Strikte Typprüfung einschalten (multiple strict-Flags aktiv).
+    "strict": true,
+
+    // Zugriff auf Arrays/Objekte wird auf undefined geprüft (sicherer Indexzugriff).
+    "noUncheckedIndexedAccess": true,
+
+    // Erzwingt, dass Überschreibungen von Methoden explizit mit `override` markiert werden.
+    "noImplicitOverride": true,
+
+    // Modulsystem: Node-spezifische ESM/CJS-Auflösung (empfohlen für moderne Node-Projekte).
+    "module": "NodeNext",
+
+		"verbatimModuleSyntax": true, // sorgt dafür, dass kein exports.__esModule erzeugt wird.
+
+    // Zielordner für kompiliertesJS
+    "outDir": "dist",
+
+    // Erzeuge SourceMaps für Debugging
+    "sourceMap": true,
+
+    // Erzeuge keine Declaration-Files (.d.ts) beim Build
+    "declaration": false,
+
+    // Composite-Projekte (für Project References) sind hier deaktiviert
+    "composite": false,
+
+    // Erzeuge keine Declaration-Maps
+    "declarationMap": false,
+
+    // Welche Standard-Libraries sollen verwendet werden (hier nur ES2022, kein DOM)
+    "lib": ["es2022"],
+
+    // Typ-Overrides / globale Typen
+    // Lade die `@types`-Typen für "node" automatisch (z. B. process, Buffer, Node-fs).
+    "types": ["node"],
+
+    // Zwingt konsistente Groß-/Kleinschreibung bei Importpfaden im Projekt
+    "forceConsistentCasingInFileNames": true,
+
+    // Module-Auflösung passend zu "NodeNext" (behandelt .mts/.cts und package.json "type").
+    "moduleResolution": "nodenext",
+
+    // Erlaube synthetische Default-Imports (bessere Interop mit CommonJS)
+    "allowSyntheticDefaultImports": true
+  },
+
+  // Welche Dateien Teil des Projekts sind (Diese Globs gruppieren den Source-Code)
+  "include": ["src/**/*.ts", "src/**/*.mts", "src/**/*.cts"],
+
+  // Ausschlüsse (Build-Ordner, node_modules etc.)
+  "exclude": ["node_modules", "dist"]
+}
