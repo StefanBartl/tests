@@ -9,64 +9,68 @@ import prettierPlugin from 'eslint-plugin-prettier';
 const gitignorePath = path.resolve('.', '.gitignore');
 
 const jsConfig = [
-  // ESLint Recommended Rules
-  {
-    name: 'js/config',
-    ...js.configs.recommended,
-  },
-  // Stylistic Plugin
-  plugins.stylistic,
-  // Import X Plugin
-  plugins.importX,
-  // Airbnb Base Recommended Config
-  ...configs.base.recommended,
-  // Strict Import Config
-  rules.base.importsStrict,
+    // ESLint Recommended Rules
+    {
+        name: 'js/config',
+        ...js.configs.recommended,
+        rules: {
+            // hier globale Anpassungen ergänzen
+            'no-console': ['warn', { allow: ['warn', 'error', 'info'] }]
+        }
+    },
+    // Stylistic Plugin
+    plugins.stylistic,
+    // Import X Plugin
+    plugins.importX,
+    // Airbnb Base Recommended Config
+    ...configs.base.recommended,
+    // Strict Import Config
+    rules.base.importsStrict
 ];
 
 const nodeConfig = [
-  // Node Plugin
-  plugins.node,
-  // Airbnb Node Recommended Config
-  ...configs.node.recommended,
+    // Node Plugin
+    plugins.node,
+    // Airbnb Node Recommended Config
+    ...configs.node.recommended
 ];
 
 const typescriptConfig = [
-  // TypeScript ESLint Plugin
-  plugins.typescriptEslint,
-  // Airbnb Base TypeScript Config
-  ...configs.base.typescript,
-  // Strict TypeScript Config
-  rules.typescript.typescriptEslintStrict,
+    // TypeScript ESLint Plugin
+    plugins.typescriptEslint,
+    // Airbnb Base TypeScript Config
+    ...configs.base.typescript,
+    // Strict TypeScript Config
+    rules.typescript.typescriptEslintStrict
 ];
 
 const prettierConfig = [
-  // Prettier Plugin
-  {
-    name: 'prettier/plugin/config',
-    plugins: {
-      prettier: prettierPlugin,
+    // Prettier Plugin
+    {
+        name: 'prettier/plugin/config',
+        plugins: {
+            prettier: prettierPlugin
+        }
     },
-  },
-  // Prettier Config
-  {
-    name: 'prettier/config',
-    rules: {
-      ...prettierConfigRules,
-      'prettier/prettier': 'error',
-    },
-  },
+    // Prettier Config
+    {
+        name: 'prettier/config',
+        rules: {
+            ...prettierConfigRules,
+            'prettier/prettier': 'error'
+        }
+    }
 ];
 
 export default [
-  // Ignore .gitignore files/folder in eslint
-  includeIgnoreFile(gitignorePath),
-  // Javascript Config
-  ...jsConfig,
-  // Node Config
-  ...nodeConfig,
-  // TypeScript Config
-  ...typescriptConfig,
-  // Prettier Config
-  ...prettierConfig,
+    // Ignore .gitignore files/folder in eslint
+    includeIgnoreFile(gitignorePath),
+    // Javascript Config
+    ...jsConfig,
+    // Node Config
+    ...nodeConfig,
+    // TypeScript Config
+    ...typescriptConfig,
+    // Prettier Config
+    ...prettierConfig
 ];
