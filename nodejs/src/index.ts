@@ -1,16 +1,22 @@
-// index.ts
-import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import type { IncomingMessage, ServerResponse } from 'node:http';
+const fileName = fileURLToPath(import.meta.url);
+const dirName = path.dirname(fileName);
 
-const PORT = 3000;
+const OUTPUT = path.join(dirName, '../Ressourcen/Output.txt');
 
-function handleRequest(_req: IncomingMessage, res: ServerResponse): void {
-   res.writeHead(200, { 'Content-Type': 'text/plain' });
-   res.end('Hello world vom handle.');
+const writeableStream = fs.createWriteStream(OUTPUT);
+
+writeableStream.on('finish', () => {
+  console.info('Finished');
+});
+
+for (let i = 0; i < 100; i += 1) {
+  writeableStream.write('Dies ist die erste Zeile...\n', 'utf-8', () => {
+    // Callback der ausgeführt wird, wenn die Daten geschrieben wurden
+  });
 }
 
-const server = http.createServer(handleRequest);
-server.listen(PORT, () => {
-   console.log(`Server started on port ${PORT}`);
-});
+writeableStream.end();
